@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Livro de Receitas</title>
+</head>
+
+<body style="text-align: center">
+  <header>
+    <h1>Livro de Receitas</h1>
+    <img th:src="@{/images/cook-home.png}" />
+  </header>
+  <main>
+    <header>
+      <h3>Muito bem vindo!</h3>
+    </header>
+    <p>Bem vindo ao site do livro de receitas, onde você vai encontrar receitas deliciosas.</p>
+    <p>Este site foi feito com muito carinho e pensando em você que sempre gostou de boas receitas e de comer bem!</p>
+    <p>Confira abaixo nossas receitas:</p>
+    <ul>
+      <li>
+        <a th:href="@{/cake}">Delicioso bolo de Maracujá</a>
+      </li>
+      <li>
+        <a th:href="@{/chicken}">Delicioso frango caramelizado</a>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <p>Licença GPL sobre este projeto</p>
+  </footer>
+</body>
+
+</html>
