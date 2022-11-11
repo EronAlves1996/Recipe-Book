@@ -36,15 +36,20 @@ public class RecipeControllerTest {
         .andExpect(view().name("chicken"))
         .andExpect(content().string(containsString("Frango Caramelizado")))
         .andExpect(content().string(containsStringIgnoringCase(
-            "Mexa com uma escumadeira apenas uma vez para misturar os ingredientes e deixe até o frango ficar bem dourado.")));            
+            "Mexa com uma escumadeira apenas uma vez para misturar os ingredientes e deixe até o frango ficar bem dourado.")));
   }
 
   @Test
   public void testCake() throws Exception {
     mockMvc.perform(get("/cake"))
-    .andExpect(status().isOk())
-    .andExpect(view().name("cake"))
-    .andExpect(content().string(containsString("Bolo de Maracujá")));
+        .andExpect(status().isOk())
+        .andExpect(view().name("cake"))
+        .andExpect(content().string(containsString("Bolo de Maracujá")));
   }
 
+  @Test
+  public void testPageDoesntExist() throws Exception {
+    mockMvc.perform(get("/pageany"))
+        .andExpect((status().isNotFound()));
+  }
 }
