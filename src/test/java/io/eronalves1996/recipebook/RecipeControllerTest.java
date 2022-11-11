@@ -29,4 +29,14 @@ public class RecipeControllerTest {
         .andExpect(content().string(containsStringIgnoringCase("Delicioso Frango Caramelizado")));
   }
 
+  @Test
+  public void testChicken() throws Exception {
+    mockMvc.perform(get("/chicken"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("chicken"))
+        .andExpect(content().string(containsString("Frango Caramelizado")))
+        .andExpect(content().string(containsStringIgnoringCase(
+            "Mexa com uma escumadeira apenas uma vez para misturar os ingredientes e deixe até o frango ficar bem dourado.")));
+  }
+
 }
